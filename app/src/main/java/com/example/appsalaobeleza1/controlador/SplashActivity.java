@@ -14,7 +14,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class SplashActivity extends AppCompatActivity {
-private static final int TEMPO = 2000; // EM MILESEGUNDOS
+private static final int TEMPO = 40000; // EM MILESEGUNDOS
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

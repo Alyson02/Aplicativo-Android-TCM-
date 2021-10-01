@@ -21,6 +21,7 @@
 
     <!--cores criadas-->
     <color name="bar_color">#074795</color>
+    <color name="progess_bar_color">#00CCFF</color>
 
 
 </resources>
