@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controlador.LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="600dp"
+        android:layout_height="286dp"
+        android:layout_gravity="center|top"
+        android:rotationY="180"
+        app:srcCompat="@drawable/ic_fundologinsemlogo1" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="140dp"
+        app:srcCompat="@drawable/logo_g" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="130dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:text="Cadastre-se"
+            android:textSize="24dp"
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/inputNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:hint="Nome"
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="15dp"/>
+
+        <EditText
+            android:id="@+id/inputCpf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:hint="CPF"
+
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="15dp"/>
+
+        <EditText
+            android:id="@+id/inputEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:hint="E-mail"
+
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="15dp"/>
+
+        <EditText
+            android:id="@+id/inputPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:hint="Senha"
+
+            />
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="15dp" />
+
+
+        <Button
+            android:id="@+id/btnEnviar"
+            android:layout_width="236.5dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="75dp"
+            android:background="@drawable/buttons_app"
+            android:text="solicitar"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:paddingLeft="4.5dp"
+            android:text="Ja tenho cadastro, fazer login"
+            android:textColor="@color/colorPrimary"
+            android:textAlignment="center"
+            android:layout_marginTop="15dp"
+            android:textStyle=""/>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Beauty</string>
+    <string name="UserInput">User</string>
+    <string name="PasswordInput">Password</string>
+    <string name="esqueciSenha">Esqueceu a senha?</string>
 </resources>

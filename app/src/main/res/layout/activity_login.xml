@@ -1,65 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".controlador.LoginActivity">
 
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        app:srcCompat="@drawable/ic_fundologinsemlogo1" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="140dp"
+        app:srcCompat="@drawable/logo_g" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="160dp">
 
-        <LinearLayout
+
+        <EditText
+            android:id="@+id/inputPassword"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:hint="@string/UserInput"
+            />
 
-            <ImageView
-                android:id="@+id/imageView2"
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="15dp"/>
+
+        <EditText
+            android:id="@+id/inputUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:hint="@string/PasswordInput"
+
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="15dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:paddingLeft="4.5dp"
+            android:text="@string/esqueciSenha"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnEnviar"
+            android:layout_width="236.5dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="75dp"
+            android:background="@drawable/buttons_app"
+            android:text="Login"
+            android:textColor="#FFFFFF" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="301dp"
-                app:srcCompat="@mipmap/ic_background_liz_mary" />
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                android:layout_gravity="center"
+                android:layout_marginLeft="85dp"
+                android:layout_marginRight="85dp"
+                />
 
-            <EditText
-                android:id="@+id/editTextUsuario"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Digite o usuario"
-                android:inputType="textPersonName" />
-
-            <EditText
-                android:id="@+id/editTextSenha"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Digite a senha"
-                android:inputType="textPassword" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_gravity="center"
+                android:background="#FAFAFA"
+                android:paddingVertical="14dp"
+                android:paddingHorizontal="3dp"
+                android:text="OU"
+                android:textColor="@color/colorPrimary"
+                android:textSize="10dp" />
 
-                <Button
-                    android:id="@+id/buttonEnviar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/buttons_app"
-                    android:text="Enviar" />
 
-                <Button
-                    android:id="@+id/buttonCancelar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/buttons_app"
-                    android:text="Cancelar" />
-            </LinearLayout>
-        </LinearLayout>
+        </FrameLayout>
+
+
+        <Button
+            android:id="@+id/btnCad"
+            android:layout_width="236.5dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/buttoncad_app"
+            android:text="SOLICITAR CADASTRO"
+            android:textColor="#1B7FB8" />
+
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>
