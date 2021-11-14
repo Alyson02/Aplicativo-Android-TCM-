@@ -9,7 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.appsalaobeleza1.Home;
 import com.example.appsalaobeleza1.R;
+import com.example.appsalaobeleza1.ui.home.HomeFragment;
+import com.example.appsalaobeleza1.ui.home.HomeViewModel;
 import com.example.appsalaobeleza1.utils.Mensagem;
 
 public class LoginActivity extends AppCompatActivity {
@@ -39,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     if (loginDto.autenticar(password.getText().toString(), username.getText().toString())) {
                         Log.i("Validação", "Usuario" + username + "\n Senha" + password);
-                        Intent telaMenu = new Intent(getApplicationContext(), MenuActivity.class);
+                        Intent telaMenu = new Intent(getApplicationContext(), HomeFragment.class);
                         startActivity(telaMenu);
                         Mensagem.exibirMensagem(getApplicationContext(), "Logado com sucesso!!");
                     } else {

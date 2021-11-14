@@ -9,11 +9,12 @@
     <color name="white">#FFFFFFFF</color>
 
 
-    <color name="colorPrimary">#1B7FB8</color>
+    <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#4a3456</color>
     <color name="colorAccent">#03DAC5</color>
 
     <color name="black_overlay">#66000000</color>
+
     <!--Cores do AppSalao de Beleza Liz Mary -->
     <color name="color_black">#FF000000</color>
     <color name="color_white">#FFFFFFFF</color>

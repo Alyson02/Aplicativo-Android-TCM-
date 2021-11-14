@@ -3,4 +3,8 @@
     <string name="UserInput">User</string>
     <string name="PasswordInput">Password</string>
     <string name="esqueciSenha">Esqueceu a senha?</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
