@@ -150,10 +150,10 @@
             android:layout_height="match_parent"
             android:layout_marginTop="25dp">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="74dp"
-            android:src="@drawable/ativi"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:src="@drawable/ativi" />
 
             <TextView
                 android:layout_width="match_parent"

@@ -45,18 +45,24 @@
             android:layout_height="wrap_content"
             android:minHeight="15dp"/>
 
+        <com.google.android.material.textfield.TextInputLayout
+            app:passwordToggleEnabled="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp">
+
+
         <EditText
             android:id="@+id/inputUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textEmailAddress"
-            android:layout_marginLeft="28dp"
-            android:layout_marginRight="28dp"
+            android:inputType="textPassword"
             android:hint="@string/PasswordInput"
-
             />
 
+        </com.google.android.material.textfield.TextInputLayout>
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,7 +97,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/colorPrimary"
+                android:background="#111"
                 android:layout_gravity="center"
                 android:layout_marginLeft="85dp"
                 android:layout_marginRight="85dp"
@@ -105,7 +111,7 @@
                 android:paddingVertical="14dp"
                 android:paddingHorizontal="3dp"
                 android:text="OU"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#111111"
                 android:textSize="10dp" />
 
 

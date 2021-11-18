@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foregroundTint="@color/bar_color"
+    tools:context=".dsServico">
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="356dp"
+        android:layout_height="181dp"
+        android:layout_marginTop="33dp"
+        android:background="@drawable/borda"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="143dp"
+            android:layout_height="match_parent"
+            android:background="#0C4667"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:src="@drawable/ic_baseline_account_circle_24" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="13dp"
+                android:text="Nome do cliente"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="13dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="15dp"
+                android:text="Numero do cliente"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="13dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="219dp"
+            android:layout_height="179dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Nome do serviço"
+                android:textAlignment="center"
+                android:textColor="#0C4667"
+                android:textSize="13dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="219dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="85dp"
+                android:layout_marginRight="85dp"
+                android:background="#969393" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginRight="20dp"
+                android:text="Lorem ipsum dolor sit amet, consectetur. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia."
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="13dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
+        tools:layout_editor_absoluteX="0dp">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="115dp"
+            android:layout_height="30dp"
+            android:text="Cancelar"
+            android:textColor="#F30909"
+            tools:layout_editor_absoluteX="76dp"
+            tools:layout_editor_absoluteY="267dp"
+            android:background="@drawable/btn_cancelar"/>
+
+        <Space
+            android:layout_width="8px"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="115dp"
+            android:layout_height="30dp"
+            android:text="Confirmar"
+            android:textColor="#2D8C32"
+            tools:layout_editor_absoluteX="197dp"
+            tools:layout_editor_absoluteY="267dp"
+            android:background="@drawable/btn_confirmar"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:text="Atividades"
+        android:textColor="#000"
+        android:textSize="24dp"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        tools:layout_editor_absoluteX="0dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:layout_editor_absoluteX="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:background="@drawable/add_ativ"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_addservi" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
