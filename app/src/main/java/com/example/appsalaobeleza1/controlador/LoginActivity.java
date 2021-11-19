@@ -32,6 +32,8 @@ public class LoginActivity extends AppCompatActivity {
 
         loginDto = new LoginDto("123","gmail");
 
+
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     if (loginDto.autenticar(password.getText().toString(), username.getText().toString())) {
                         Log.i("Validação", "Usuario" + username + "\n Senha" + password);
-                        Intent telaMenu = new Intent(getApplicationContext(), HomeFragment.class);
+                        Intent telaMenu = new Intent(getApplicationContext(), CadastrarActivity.class);
                         startActivity(telaMenu);
                         Mensagem.exibirMensagem(getApplicationContext(), "Logado com sucesso!!");
                     } else {
