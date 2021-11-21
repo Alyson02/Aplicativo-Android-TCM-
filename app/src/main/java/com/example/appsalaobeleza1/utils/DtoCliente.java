@@ -2,10 +2,12 @@ package com.example.appsalaobeleza1.utils;
 
 public class DtoCliente {
     private String titulo, desc;
+    private int idImage;
 
-    public DtoCliente(String titulo, String desc) {
+    public DtoCliente(String titulo, String desc, int idImage) {
         this.titulo = titulo;
         this.desc = desc;
+        this.idImage = idImage;
     }
 
 
@@ -26,5 +28,13 @@ public class DtoCliente {
 
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+
+    public int getIdImage() {
+        return idImage;
+    }
+
+    public void setIdImage(int idImage) {
+        this.idImage = idImage;
     }
 }

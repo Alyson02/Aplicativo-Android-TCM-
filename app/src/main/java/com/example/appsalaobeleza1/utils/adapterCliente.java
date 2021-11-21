@@ -3,6 +3,7 @@ package com.example.appsalaobeleza1.utils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -30,6 +31,7 @@ public class adapterCliente extends RecyclerView.Adapter<adapterCliente.ClienteV
     public void onBindViewHolder(@NonNull ClienteViewHolder holder, int position) {
         holder.txtTitulo.setText(arrayListCliente.get(position).getTitulo());
         holder.txtDesc.setText(arrayListCliente.get(position).getDesc());
+        holder.imgView.setImageResource(arrayListCliente.get(position).getIdImage());
     }
 
     @Override
@@ -39,12 +41,14 @@ public class adapterCliente extends RecyclerView.Adapter<adapterCliente.ClienteV
 
     public class  ClienteViewHolder extends RecyclerView.ViewHolder{
         TextView txtTitulo, txtDesc;
+        ImageView imgView;
 
         public ClienteViewHolder(@NonNull View itemView) {
             super(itemView);
 
             txtTitulo = itemView.findViewById(R.id.textViewTitulo);
             txtDesc = itemView.findViewById(R.id.textViewDesc);
+            imgView = itemView.findViewById(R.id.imgCli);
         }
     }
 

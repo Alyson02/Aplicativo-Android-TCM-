@@ -1,31 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    app:cardElevation="7dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:paddingLeft="12dp"
+        android:paddingTop="11dp"
+        android:paddingRight="6dp"
+        android:paddingBottom="11dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgCli"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_baseline_account_circle_24"
+                app:civ_border_color="#FF000000"/>
+
+            <TextView
+                android:id="@+id/textViewTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Titulo"
+                android:textAlignment="center" />
+
+
+        </LinearLayout>
+
 
         <TextView
+            android:id="@+id/textViewDesc"
             android:layout_width="wrap_content"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Titulo"
-            android:id="@+id/textViewTitulo"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Desc"
-            android:id="@+id/textViewDesc"/>
+            android:layout_marginLeft="20dp"
+            android:text="Desc" />
 
     </LinearLayout>
 
 
-
-
-</LinearLayout>
+</androidx.cardview.widget.CardView>

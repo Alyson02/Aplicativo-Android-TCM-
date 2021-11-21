@@ -34,8 +34,8 @@ public class Clientes extends AppCompatActivity {
     }
 
     private void carregaClientes() {
-        DtoCliente cliente = new DtoCliente("Tony Stark", "Genio playboy milionáro e filantropo");
-        DtoCliente cliente2 = new DtoCliente("Bruce Wayne", "Morcegão que te assombra");
+        DtoCliente cliente = new DtoCliente("Tony Stark", "Genio playboy milionáro e filantropo", R.drawable.tony);
+        DtoCliente cliente2 = new DtoCliente("Bruce Wayne", "Morcegão que te assombra", R.drawable.batman);
 
         arrayListCliente.add(cliente);
         arrayListCliente.add(cliente2);

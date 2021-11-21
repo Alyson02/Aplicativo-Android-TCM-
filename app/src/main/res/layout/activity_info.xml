@@ -33,16 +33,16 @@
             android:layout_marginRight="30dp"
             android:layout_marginTop="20dp"
         />
+
         <TextView
-            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:text="A Mercuryo SQ foi criada em 08 de maio de 2021, quando sete pessoas tiveram a ideia de entrar no ramo da tecnologia. O nome da empresa, foi inspirado em “Mercúrio”, deus da mitologia romana bastante associado a velocidade, o que explica o conceito do nosso nome (Speed and Quality)."
             android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:layout_marginTop="20dp"
-        />
+            android:layout_marginRight="30dp"
+            android:text="A Mercuryo SQ foi criada em 08 de maio de 2021, quando sete pessoas tiveram a ideia de entrar no ramo da tecnologia. O nome da empresa, foi inspirado em “Mercúrio”, deus da mitologia romana bastante associado a velocidade, o que explica o conceito do nosso nome (Speed and Quality)."
+            android:textColor="@color/black"
+            android:textSize="18dp" />
 
         <ImageView
             android:layout_width="150dp"
