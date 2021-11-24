@@ -12,9 +12,12 @@
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/drawable/btn_confirmar.xml" value="0.3267543859649123" />
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/drawable/buttoncad_app.xml" value="0.31837606837606836" />
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/drawable/buttons_app.xml" value="0.31837606837606836" />
+        <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/drawable/cli_cancelar.xml" value="0.31837606837606836" />
+        <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/drawable/cli_confirmar.xml" value="0.31837606837606836" />
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/drawable/divUser.xml" value="0.3267543859649123" />
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/drawable/divuser.xml" value="0.3368421052631579" />
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/drawable/ic_delete.xml" value="0.31837606837606836" />
+        <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/drawable/inscliente_fundo.xml" value="0.31837606837606836" />
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/drawable/teste.xml" value="0.31837606837606836" />
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/layout/activity_cadastrar.xml" value="0.33" />
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/layout/activity_clientes.xml" value="0.4909819639278557" />
@@ -22,12 +25,13 @@
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/layout/activity_ds_servico.xml" value="0.33" />
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/layout/activity_info.xml" value="0.33" />
+        <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/layout/activity_ins_cliente.xml" value="0.25" />
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/layout/activity_menu.xml" value="0.18063063063063062" />
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/layout/activity_splash.xml" value="0.33" />
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/layout/activity_user.xml" value="0.33" />
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/layout/adapter_cliente.xml" value="0.5" />
-        <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/layout/cadastra_func.xml" value="0.30512820512820515" />
+        <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/layout/cadastra_func.xml" value="0.5425400739827374" />
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/layout/esqueci_senha.xml" value="0.30512820512820515" />
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/layout/fragment_dashboard.xml" value="0.30512820512820515" />
         <entry key="..\:/Profissional e Estudos/DS/Projetos/Android/TCM - Prof/app/src/main/res/layout/fragment_home.xml" value="0.30512820512820515" />

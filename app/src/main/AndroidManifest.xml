@@ -10,15 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppSalaoBeleza1">
         <activity
+            android:name=".InsCliente"
+            android:exported="false" />
+        <activity
             android:name=".Clientes"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".UserActivity"
@@ -42,9 +43,7 @@
         <activity
             android:name=".controlador.LoginActivity"
             android:label="Tela de Login" />
-        <activity android:name=".controlador.SplashActivity">
-
-        </activity>
+        <activity android:name=".controlador.SplashActivity"></activity>
     </application>
 
 </manifest>
