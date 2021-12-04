@@ -1,4 +1,4 @@
-package com.example.appsalaobeleza1.utils;
+package com.example.appsalaobeleza1;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,14 +9,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.appsalaobeleza1.R;
-
 import java.util.ArrayList;
 
-public class adapterCliente extends RecyclerView.Adapter<adapterCliente.ClienteViewHolder> {
+public class AdapterCliente extends RecyclerView.Adapter<AdapterCliente.ClienteViewHolder> {
 
     ArrayList<DtoCliente> arrayListCliente;
-    public adapterCliente(ArrayList<DtoCliente> arrayListCliente) {
+    public AdapterCliente(ArrayList<DtoCliente> arrayListCliente) {
         this.arrayListCliente = arrayListCliente;
     }
 
@@ -29,7 +27,7 @@ public class adapterCliente extends RecyclerView.Adapter<adapterCliente.ClienteV
 
     @Override
     public void onBindViewHolder(@NonNull ClienteViewHolder holder, int position) {
-        holder.txtTitulo.setText(arrayListCliente.get(position).getTitulo());
+        holder.txtDesc.setText(arrayListCliente.get(position).getTitulo());
         holder.txtDesc.setText(arrayListCliente.get(position).getDesc());
         holder.imgView.setImageResource(arrayListCliente.get(position).getIdImage());
     }

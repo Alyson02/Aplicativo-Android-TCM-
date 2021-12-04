@@ -1,4 +1,4 @@
-package com.example.appsalaobeleza1.utils;
+package com.example.appsalaobeleza1;
 
 public class DtoCliente {
     private String titulo, desc;

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+<!--    Esse arquivo e responsavel pela exibição da modal de cadastro do serviço-->
+
+    <EditText
+        android:id="@+id/edit_nomeproj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome do projeto"/>
+
+    <EditText
+        android:id="@+id/descproj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_nomeproj"
+        android:layout_alignParentStart="true"
+        android:hint="Descrição do projeto" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/descproj" />
+
+</RelativeLayout>
