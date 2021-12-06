@@ -2,21 +2,26 @@ package com.example.appsalaobeleza1;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class Clientes extends AppCompatActivity {
+public class Clientes extends AppCompatActivity implements AdapterCliente.OnNoteListener {
 
     ArrayList<DtoCliente> arrayListCliente = new ArrayList<>();
     RecyclerView recyclerViewCliente;
+    CardView cardAddCli;
 
 
     @Override
@@ -27,6 +32,8 @@ public class Clientes extends AppCompatActivity {
         //variável de inicialização e atribuição
         recyclerViewCliente = findViewById(R.id.recyclerViewCliente);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navogatiom);
+        cardAddCli = findViewById(R.id.cardAddCli);
+
 
         // Setar a home selecionada
         bottomNavigationView.setSelectedItemId(R.id.client);
@@ -52,12 +59,16 @@ public class Clientes extends AppCompatActivity {
             }
         });
 
+        cardAddCli.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), InsCliente.class);
+                startActivity(intent);
+            }
+        });
 
         carregaClientes();
-        AdapterCliente adapter = new AdapterCliente(arrayListCliente);
-
-
-
+        AdapterCliente adapter = new AdapterCliente(arrayListCliente, this);
         recyclerViewCliente.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerViewCliente.setAdapter(adapter);
     }
@@ -68,5 +79,13 @@ public class Clientes extends AppCompatActivity {
 
         arrayListCliente.add(cliente);
         arrayListCliente.add(cliente2);
+    }
+
+    @Override
+    public void onNoteClick(int position) {
+        Intent intent = new Intent(this, UpdateCliActivity.class);
+        //Como passar esse item selecionado:
+        //intent.putExtra("some_object", arrayListServ.get(position)  obs: pesquisar: Como anexar objetos parcel a pacotes );
+        startActivity(intent);
     }
 }

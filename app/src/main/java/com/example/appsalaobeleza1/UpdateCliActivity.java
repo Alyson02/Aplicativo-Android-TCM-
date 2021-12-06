@@ -8,25 +8,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class InsCliente extends AppCompatActivity {
+public class UpdateCliActivity extends AppCompatActivity {
     EditText nome, cpf, email, tel;
     Button cancel, confirm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ins_cliente);
+        setContentView(R.layout.activity_update_cli);
 
         //Pegando componentes
-        nome = findViewById(R.id.inputNome);
-        cpf = findViewById(R.id.inputCpf);
-        email = findViewById(R.id.inputEmail);
-        tel = findViewById(R.id.inputTel);
-        cancel = findViewById(R.id.btnCancelar);
-        confirm = findViewById(R.id.btnConfirmar);
+        nome = findViewById(R.id.inputNomeUpdate);
+        cpf = findViewById(R.id.inputCpfUpdate);
+        email = findViewById(R.id.inputEmailUpdate);
+        tel = findViewById(R.id.inputTelUpdate);
+        cancel = findViewById(R.id.btnCancelarUpdate);
+        confirm = findViewById(R.id.btnConfirmarUpdate);
 
         //eventos
-
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,5 +41,8 @@ public class InsCliente extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
+
+
 }

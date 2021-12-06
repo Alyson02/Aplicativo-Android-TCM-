@@ -127,7 +127,7 @@ public class BottomMenuActivity extends AppCompatActivity implements AdapterServ
         3 - Feito isso vai dar erro, pois precisa ter um metodo dessa classe dentro da principal. Use as ferramentas da ide para isso
         4 - No adapter dentro da classe abstrata, implemente atraves do "implements" um onclick e copie o restante do codigo para funcionar
         5 - Na classe do adapter coloque um atributo OnNoteListener e o implemente no construtor da classes, depois disso aonde estiver dando
-         erro é pq precisa implementar um OnNoteListener
+         erro é pq precisa implementar um OnNoteListener, tbm e preciso colocar no viewholder (consulte o adapterserv)
         6 - Na instancia do adapter, vai dar erro, coloque o contexto através do this
         7 - Implemente na classe principal no metodo OnnoteClick a Intent que redirecionará
 
