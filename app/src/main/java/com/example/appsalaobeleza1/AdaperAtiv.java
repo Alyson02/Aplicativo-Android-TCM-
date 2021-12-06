@@ -42,4 +42,6 @@ public class AdaperAtiv extends RecyclerView.Adapter<AdaperAtiv.AtivViewwHolder>
             atividade = itemView.findViewById(R.id.txtAtiv);
         }
     }
+
+
 }

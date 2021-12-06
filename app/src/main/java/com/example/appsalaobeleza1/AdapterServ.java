@@ -13,9 +13,11 @@ import java.util.ArrayList;
 public class AdapterServ extends  RecyclerView.Adapter<AdapterServ.ServViewHolder>{
 
     ArrayList<DtoServ> arrayListServ;
+    private OnNoteListener onNoteListener;
 
-    public AdapterServ(ArrayList<DtoServ> arrayListServ) {
+    public AdapterServ(ArrayList<DtoServ> arrayListServ, OnNoteListener onNoteListener) {
         this.arrayListServ = arrayListServ;
+        this.onNoteListener = onNoteListener;
     }
 
     /*passo para implementar o adapter
@@ -29,7 +31,7 @@ public class AdapterServ extends  RecyclerView.Adapter<AdapterServ.ServViewHolde
     @Override
     public ServViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemLista = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_serv,parent,false);
-        return new ServViewHolder(itemLista);
+        return new ServViewHolder(itemLista, onNoteListener);
     }
 
     @Override
@@ -43,13 +45,25 @@ public class AdapterServ extends  RecyclerView.Adapter<AdapterServ.ServViewHolde
         return arrayListServ.size();
     }
 
-    public class ServViewHolder extends RecyclerView.ViewHolder{
+    public class ServViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener{
         TextView txtTitulo, txtDesc;
-        public ServViewHolder(@NonNull View itemView) {
+        OnNoteListener onNoteListener;
+        public ServViewHolder(@NonNull View itemView, OnNoteListener onNoteListener) {
             super(itemView);
             txtTitulo = itemView.findViewById(R.id.tituloServ);
             txtDesc = itemView.findViewById(R.id.desc);
+            this.onNoteListener = onNoteListener;
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View view) {
+            onNoteListener.onNoteClick(getAdapterPosition());
+        }
+    }
+
+    public interface OnNoteListener {
+        void onNoteClick(int position);
     }
 
 

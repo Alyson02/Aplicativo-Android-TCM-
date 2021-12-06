@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -16,7 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class BottomMenuActivity extends AppCompatActivity {
+public class BottomMenuActivity extends AppCompatActivity implements AdapterServ.OnNoteListener {
 
     private ImageView info = null;
     ArrayList<DtoServ> arrayListServ = new ArrayList<>();
@@ -80,10 +81,10 @@ public class BottomMenuActivity extends AppCompatActivity {
 
         carregaServs();
 
-        AdapterServ adapter = new AdapterServ(arrayListServ);
+        AdapterServ adapter = new AdapterServ(arrayListServ, this);
 
 
-//        LinearLayoutManager layoutManager
+//                LinearLayoutManager layoutManager
 //                = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
 
         recyclerViewServ.setLayoutManager(new LinearLayoutManager(getApplicationContext(), RecyclerView.HORIZONTAL, false));
@@ -117,5 +118,29 @@ public class BottomMenuActivity extends AppCompatActivity {
 
         arrayListAtiv.add(ativ);
         arrayListAtiv.add(ativ2);
+    }
+
+    /*Passos para adicionar onclick a uma lista de um recycler
+
+        1 - No adapter implemente um metodo chamado OnNoteListener e passe um position (veja o adaperserv como exemplo)
+        2 - Na classe principal implemente no seu bloco esse metodo através do "implements"
+        3 - Feito isso vai dar erro, pois precisa ter um metodo dessa classe dentro da principal. Use as ferramentas da ide para isso
+        4 - No adapter dentro da classe abstrata, implemente atraves do "implements" um onclick e copie o restante do codigo para funcionar
+        5 - Na classe do adapter coloque um atributo OnNoteListener e o implemente no construtor da classes, depois disso aonde estiver dando
+         erro é pq precisa implementar um OnNoteListener
+        6 - Na instancia do adapter, vai dar erro, coloque o contexto através do this
+        7 - Implemente na classe principal no metodo OnnoteClick a Intent que redirecionará
+
+     */
+
+    private static final String TAG = "Cannot invoke method length() on null object";
+    @Override
+    public void onNoteClick(int position) {
+        Log.d(TAG, "onNoteClick: clicked.");
+
+        Intent intent = new Intent(this, DsServico.class);
+        //Como passar esse item selecionado:
+        //intent.putExtra("some_object", arrayListServ.get(position)  obs: pesquisar: Como anexar objetos parcel a pacotes );
+        startActivity(intent);
     }
 }
