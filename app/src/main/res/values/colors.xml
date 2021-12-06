@@ -11,7 +11,7 @@
 
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#4a3456</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccent">#074795</color>
 
     <color name="black_overlay">#66000000</color>
 
@@ -22,7 +22,7 @@
 
     <!--cores criadas-->
     <color name="bar_color">#074795</color>
-    <color name="progess_bar_color">#00CCFF</color>
+    <color name="progess_bar_color">#0073FF</color>
 
 
 </resources>

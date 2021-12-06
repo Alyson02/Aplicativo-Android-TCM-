@@ -42,7 +42,9 @@
         <entry key="..\:/Users/alyso/OneDrive/Documentos/vamo logo/Aplicativo-Android-TCM-/app/src/main/res/drawable/btn_confirmar.xml" value="0.18903508771929825" />
         <entry key="..\:/Users/alyso/OneDrive/Documentos/vamo logo/Aplicativo-Android-TCM-/app/src/main/res/drawable/selector.xml" value="0.3267543859649123" />
         <entry key="..\:/Users/alyso/OneDrive/Documentos/vamo logo/Aplicativo-Android-TCM-/app/src/main/res/layout/activity_bottom_menu.xml" value="0.3131578947368421" />
+        <entry key="..\:/Users/alyso/OneDrive/Documentos/vamo logo/Aplicativo-Android-TCM-/app/src/main/res/layout/activity_cadastrar.xml" value="0.312280701754386" />
         <entry key="..\:/Users/alyso/OneDrive/Documentos/vamo logo/Aplicativo-Android-TCM-/app/src/main/res/layout/activity_clientes.xml" value="0.1" />
+        <entry key="..\:/Users/alyso/OneDrive/Documentos/vamo logo/Aplicativo-Android-TCM-/app/src/main/res/layout/activity_consultar.xml" value="0.312280701754386" />
         <entry key="..\:/Users/alyso/OneDrive/Documentos/vamo logo/Aplicativo-Android-TCM-/app/src/main/res/layout/activity_ds_servico.xml" value="0.30027173913043476" />
         <entry key="..\:/Users/alyso/OneDrive/Documentos/vamo logo/Aplicativo-Android-TCM-/app/src/main/res/layout/activity_home.xml" value="0.371875" />
         <entry key="..\:/Users/alyso/OneDrive/Documentos/vamo logo/Aplicativo-Android-TCM-/app/src/main/res/layout/activity_info.xml" value="0.371875" />
@@ -55,6 +57,7 @@
         <entry key="..\:/Users/alyso/OneDrive/Documentos/vamo logo/Aplicativo-Android-TCM-/app/src/main/res/layout/adapter_cliente.xml" value="0.3131578947368421" />
         <entry key="..\:/Users/alyso/OneDrive/Documentos/vamo logo/Aplicativo-Android-TCM-/app/src/main/res/layout/adapter_serv.xml" value="0.3131578947368421" />
         <entry key="..\:/Users/alyso/OneDrive/Documentos/vamo logo/Aplicativo-Android-TCM-/app/src/main/res/layout/cadastra_func.xml" value="0.3131578947368421" />
+        <entry key="..\:/Users/alyso/OneDrive/Documentos/vamo logo/Aplicativo-Android-TCM-/app/src/main/res/layout/esqueci_senha.xml" value="0.312280701754386" />
         <entry key="..\:/Users/alyso/OneDrive/Documentos/vamo logo/Aplicativo-Android-TCM-/app/src/main/res/layout/fragment_dashboard.xml" value="0.371875" />
         <entry key="..\:/Users/alyso/OneDrive/Documentos/vamo logo/Aplicativo-Android-TCM-/app/src/main/res/layout/fragment_home.xml" value="0.371875" />
         <entry key="..\:/Users/alyso/OneDrive/Documentos/vamo logo/Aplicativo-Android-TCM-/app/src/main/res/layout/fragment_notifications.xml" value="0.371875" />
