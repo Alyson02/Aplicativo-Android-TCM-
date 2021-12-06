@@ -8,16 +8,20 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.appsalaobeleza1.BottomMenuActivity;
+import com.example.appsalaobeleza1.CadastraFunc;
+import com.example.appsalaobeleza1.EsqueciSenha;
 import com.example.appsalaobeleza1.R;
 import com.example.appsalaobeleza1.utils.Mensagem;
 
 public class LoginActivity extends AppCompatActivity {
 
     EditText username, password;
-    Button btnLogin;
+    Button btnLogin, btnCad;
     LoginDto loginDto;
+    TextView twEsqueci;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,8 @@ public class LoginActivity extends AppCompatActivity {
         username = findViewById(R.id.inputUser);
         password = findViewById(R.id.inputPassword);
         btnLogin = findViewById(R.id.btnEnviar);
+        twEsqueci = findViewById(R.id.txtEsqueci);
+        btnCad = findViewById(R.id.btnCad);
 
         loginDto = new LoginDto("123","gmail");
 
@@ -49,6 +55,22 @@ public class LoginActivity extends AppCompatActivity {
                         Mensagem.exibirMensagem(getApplicationContext(), "Usuario/Senha inválidos!!");
                     }
                 }
+            }
+        });
+
+        btnCad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CadastraFunc.class);
+                startActivity(intent);
+            }
+        });
+
+        twEsqueci.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), EsqueciSenha.class);
+                startActivity(intent);
             }
         });
     }

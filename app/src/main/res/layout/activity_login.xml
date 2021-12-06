@@ -28,6 +28,11 @@
         android:layout_gravity="center"
         android:layout_marginTop="160dp">
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp">
 
         <EditText
             android:id="@+id/inputPassword"
@@ -35,22 +40,20 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:layout_marginLeft="28dp"
-            android:layout_marginRight="28dp"
             android:hint="@string/UserInput"
             />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="15dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
 
         <com.google.android.material.textfield.TextInputLayout
             app:passwordToggleEnabled="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="28dp"
-            android:layout_marginRight="28dp">
+            android:layout_marginRight="28dp"
+            app:passwordToggleTint="#1B7FB8">
 
 
         <EditText
@@ -69,7 +72,7 @@
             android:minHeight="15dp" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/txtEsqueci"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="28dp"
@@ -97,7 +100,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#111"
+                android:background="#1B7FB8"
                 android:layout_gravity="center"
                 android:layout_marginLeft="85dp"
                 android:layout_marginRight="85dp"
@@ -111,8 +114,9 @@
                 android:paddingVertical="14dp"
                 android:paddingHorizontal="3dp"
                 android:text="OU"
-                android:textColor="#111111"
-                android:textSize="10dp" />
+                android:textColor="#1B7FB8"
+                android:textSize="12dp"
+                android:textStyle="bold"/>
 
 
         </FrameLayout>
