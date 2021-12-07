@@ -13,10 +13,9 @@
 
 
         <ImageView
-            android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="152dp"
-            app:srcCompat="@drawable/logo_g"
+            android:src="@drawable/logo_g"
             android:layout_gravity="center"
             android:layout_marginTop="66dp"
             android:layout_marginLeft="30dp"
@@ -78,7 +77,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textSize="18dp"
-            android:text="Fornecer serviços que atende as necessidades de nossos clientes, superando as expectativas e oferecendo muito mais que apenas serviços."
+            android:text="Ser líder no mundo da tecnologia; Ser reconhecida por ser uma empresa confiável e inovadora."
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="20dp"
@@ -98,13 +97,14 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textSize="18dp"
-            android:text="Fornecer serviços que atende as necessidades de nossos clientes, superando as expectativas e oferecendo muito mais que apenas serviços."
+            android:text="Inovação; Consistência; Compromisso com a satisfação do cliente; Diversidade em tecnologia; Criatividade."
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="20dp"
             />
 
         <TextView
+            android:layout_marginBottom="28dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#002D79"
@@ -114,5 +114,14 @@
             android:layout_marginRight="30dp"
             android:layout_marginTop="20dp"
             />
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginHorizontal="30dp"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
     </LinearLayout>
 </ScrollView>

@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.appsalaobeleza1.BottomMenuActivity;
+import com.example.appsalaobeleza1.Servico;
 import com.example.appsalaobeleza1.CadastraFunc;
 import com.example.appsalaobeleza1.EsqueciSenha;
 import com.example.appsalaobeleza1.R;
@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     if (loginDto.autenticar(password.getText().toString(), username.getText().toString())) {
                         Log.i("Validação", "Usuario" + username + "\n Senha" + password);
-                        Intent telaMenu = new Intent(getApplicationContext(), BottomMenuActivity.class);
+                        Intent telaMenu = new Intent(getApplicationContext(), Servico.class);
                         startActivity(telaMenu);
                         Mensagem.exibirMensagem(getApplicationContext(), "Logado com sucesso!!");
                     } else {

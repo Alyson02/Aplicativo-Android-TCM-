@@ -29,7 +29,7 @@ public class UserActivity extends AppCompatActivity {
 
                 switch (item.getItemId()){
                     case R.id.home:
-                        startActivity(new Intent(getApplicationContext(), BottomMenuActivity.class));
+                        startActivity(new Intent(getApplicationContext(), Servico.class));
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.client:

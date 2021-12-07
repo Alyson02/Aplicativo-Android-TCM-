@@ -1,6 +1,7 @@
 package com.example.appsalaobeleza1;
 
 public class DtoServ {
+    private  int id;
     private String titulo, desc;
 
     public DtoServ(String titulo, String desc) {
@@ -9,6 +10,10 @@ public class DtoServ {
     }
 
     public DtoServ() {
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getTitulo() {

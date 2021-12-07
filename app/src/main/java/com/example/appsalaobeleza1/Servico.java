@@ -17,7 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class BottomMenuActivity extends AppCompatActivity implements AdapterServ.OnNoteListener {
+public class Servico extends AppCompatActivity implements AdapterServ.OnNoteListener {
 
     private ImageView info = null;
     ArrayList<DtoServ> arrayListServ = new ArrayList<>();
@@ -100,8 +100,8 @@ public class BottomMenuActivity extends AppCompatActivity implements AdapterServ
     }
 
     private void openDialog() {
-        ExampleDialog exampleDialog = new ExampleDialog();
-        exampleDialog.show(getSupportFragmentManager(), "example dialog");
+        AddServDialog addServDialog = new AddServDialog();
+        addServDialog.show(getSupportFragmentManager(), "example dialog");
     }
 
     private void carregaServs() {

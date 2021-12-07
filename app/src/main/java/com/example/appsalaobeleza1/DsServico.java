@@ -48,7 +48,7 @@ public class DsServico extends AppCompatActivity {
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), BottomMenuActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Servico.class);
                 startActivity(intent);
             }
         });
@@ -56,7 +56,7 @@ public class DsServico extends AppCompatActivity {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), BottomMenuActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Servico.class);
                 startActivity(intent);
             }
         });

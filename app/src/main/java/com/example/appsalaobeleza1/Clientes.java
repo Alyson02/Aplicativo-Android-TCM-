@@ -10,8 +10,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -45,7 +43,7 @@ public class Clientes extends AppCompatActivity implements AdapterCliente.OnNote
 
                 switch (item.getItemId()){
                     case R.id.home:
-                        startActivity(new Intent(getApplicationContext(), BottomMenuActivity.class));
+                        startActivity(new Intent(getApplicationContext(), Servico.class));
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.client:
