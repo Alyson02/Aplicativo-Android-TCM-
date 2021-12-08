@@ -3,6 +3,7 @@ package com.example.appsalaobeleza1;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,6 +49,10 @@ public class AddServDialog extends DialogFragment {
                             long linhasInseridas = daoMercurio.inserirServ(dtoServ);
                             if(linhasInseridas>0){
                                 Toast.makeText(getActivity().getApplicationContext(), "Inserido com sucesso", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getActivity().getApplicationContext(), Servico.class);
+                                startActivity(intent);
+                            }else{
+                                Toast.makeText(getActivity().getApplicationContext(), "Não foi possível inserir", Toast.LENGTH_SHORT).show();
                             }
                         }catch (Exception exception){
                             Toast.makeText(getActivity().getApplicationContext(), "Erro ao inserir: " + exception.toString(), Toast.LENGTH_LONG).show();

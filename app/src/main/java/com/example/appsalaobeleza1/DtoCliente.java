@@ -1,25 +1,31 @@
 package com.example.appsalaobeleza1;
 
 public class DtoCliente {
-    private String titulo, desc;
-    private int idImage;
+    private String nome, desc, email, telefone;
+    private int idImage, id;
 
     public DtoCliente(String titulo, String desc, int idImage) {
-        this.titulo = titulo;
+        this.nome = titulo;
         this.desc = desc;
         this.idImage = idImage;
     }
 
+    public DtoCliente(String nome, String desc, String email, String telefone) {
+        this.nome = nome;
+        this.desc = desc;
+        this.email = email;
+        this.telefone = telefone;
+    }
 
     public DtoCliente() {
     }
 
-    public String getTitulo() {
-        return titulo;
+    public String getNome() {
+        return nome;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getDesc() {
@@ -36,5 +42,29 @@ public class DtoCliente {
 
     public void setIdImage(int idImage) {
         this.idImage = idImage;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -42,7 +44,21 @@ public class AtivDialog extends DialogFragment {
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
+                        DtoAtiv dtoAtiv = new DtoAtiv(
+                                editTxtDescAtiv.getText().toString());
+                        DaoMercurio daoMercurio = new DaoMercurio(getActivity().getApplicationContext());
+                        try {
+                            long linhasInseridas = daoMercurio.inserirAtiv(dtoAtiv);
+                            if(linhasInseridas>0){
+                                Toast.makeText(getActivity().getApplicationContext(), "Inserido com sucesso", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getActivity().getApplicationContext(), DsServico.class);
+                                startActivity(intent);
+                            }else{
+                                Toast.makeText(getActivity().getApplicationContext(), "Não foi possível inserir", Toast.LENGTH_SHORT).show();
+                            }
+                        }catch (Exception exception){
+                            Toast.makeText(getActivity().getApplicationContext(), "Erro ao inserir: " + exception.toString(), Toast.LENGTH_LONG).show();
+                        }
                     }
                 });
 

@@ -25,6 +25,7 @@ public class Servico extends AppCompatActivity implements AdapterServ.OnNoteList
     ArrayList<DtoAtiv> arrayListAtiv = new ArrayList<>();
     RecyclerView recyclerViewAtiv;
     CardView cardAdd;
+    DaoMercurio daoMercurio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,15 +82,6 @@ public class Servico extends AppCompatActivity implements AdapterServ.OnNoteList
 
         carregaServs();
 
-        AdapterServ adapter = new AdapterServ(arrayListServ, this);
-
-
-//                LinearLayoutManager layoutManager
-//                = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
-
-        recyclerViewServ.setLayoutManager(new LinearLayoutManager(getApplicationContext(), RecyclerView.HORIZONTAL, false));
-        recyclerViewServ.setAdapter(adapter);
-
         carregaAtivs();
 
         AdaperAtiv adaperAtiv = new AdaperAtiv(arrayListAtiv);
@@ -104,20 +96,32 @@ public class Servico extends AppCompatActivity implements AdapterServ.OnNoteList
         addServDialog.show(getSupportFragmentManager(), "example dialog");
     }
 
-    private void carregaServs() {
-        DtoServ serv = new DtoServ("Infinity Games", "Espoiler para um aplicativo e-comeerce no terceito semestre");
-        DtoServ serv2 = new DtoServ("Sim!", "Talvez amanhã?");
+    public void carregaServs() {
+//        DtoServ serv = new DtoServ("Infinity Games", "Espoiler para um aplicativo e-comeerce no terceito semestre");
+//        DtoServ serv2 = new DtoServ("Sim!", "Talvez amanhã?");
+//
+//        arrayListServ.add(serv);
+//        arrayListServ.add(serv2);
 
-        arrayListServ.add(serv);
-        arrayListServ.add(serv2);
+        daoMercurio = new DaoMercurio(this);
+        arrayListServ = daoMercurio.consultarServ();
+
+        AdapterServ adapter = new AdapterServ(arrayListServ, this);
+
+        //LinearLayoutManager layoutManager
+        //= new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
+
+        recyclerViewServ.setLayoutManager(new LinearLayoutManager(getApplicationContext(), RecyclerView.HORIZONTAL, false));
+        recyclerViewServ.setAdapter(adapter);
     }
 
-    private void carregaAtivs() {
-        DtoAtiv ativ = new DtoAtiv("Desenvolver o back do sistema com ASP.NET");
-        DtoAtiv ativ2 = new DtoAtiv("Desenvolver o front do sistema com ASP.NET");
+    public void carregaAtivs() {
+        arrayListAtiv = daoMercurio.consultarAtiv();
 
-        arrayListAtiv.add(ativ);
-        arrayListAtiv.add(ativ2);
+        AdaperAtiv adaperAtiv = new AdaperAtiv(arrayListAtiv);
+
+        recyclerViewAtiv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recyclerViewAtiv.setAdapter(adaperAtiv);
     }
 
     /*Passos para adicionar onclick a uma lista de um recycler

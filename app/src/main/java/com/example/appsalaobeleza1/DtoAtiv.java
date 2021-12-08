@@ -1,6 +1,7 @@
 package com.example.appsalaobeleza1;
 
 public class DtoAtiv {
+    private  int id;
     private String atividade;
 
     public DtoAtiv(String atividade) {
@@ -16,5 +17,13 @@ public class DtoAtiv {
 
     public void setAtividade(String atividade) {
         this.atividade = atividade;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

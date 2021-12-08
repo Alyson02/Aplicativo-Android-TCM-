@@ -20,7 +20,7 @@ public class Clientes extends AppCompatActivity implements AdapterCliente.OnNote
     ArrayList<DtoCliente> arrayListCliente = new ArrayList<>();
     RecyclerView recyclerViewCliente;
     CardView cardAddCli;
-
+    DaoMercurio daoMercurio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,17 +66,21 @@ public class Clientes extends AppCompatActivity implements AdapterCliente.OnNote
         });
 
         carregaClientes();
-        AdapterCliente adapter = new AdapterCliente(arrayListCliente, this);
-        recyclerViewCliente.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        recyclerViewCliente.setAdapter(adapter);
     }
 
     private void carregaClientes() {
-        DtoCliente cliente = new DtoCliente("Tony Stark", "Genio playboy milionáro e filantropo", R.drawable.tony);
+        /*DtoCliente cliente = new DtoCliente("Tony Stark", "Genio playboy milionáro e filantropo", R.drawable.tony);
         DtoCliente cliente2 = new DtoCliente("Bruce Wayne", "Morcegão que te assombra", R.drawable.batman);
 
         arrayListCliente.add(cliente);
-        arrayListCliente.add(cliente2);
+        arrayListCliente.add(cliente2);*/
+
+        daoMercurio = new DaoMercurio(this);
+        arrayListCliente = daoMercurio.consultarCli();
+
+        AdapterCliente adapter = new AdapterCliente(arrayListCliente, this);
+        recyclerViewCliente.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recyclerViewCliente.setAdapter(adapter);
     }
 
     @Override

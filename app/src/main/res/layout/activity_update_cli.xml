@@ -62,8 +62,8 @@
             android:layout_marginLeft="28dp"
             android:layout_marginRight="28dp"
             android:ems="10"
-            android:hint="CPF/CNPJ"
-            android:inputType="number"
+            android:hint="Descrição"
+            android:inputType="text"
 
             />
 

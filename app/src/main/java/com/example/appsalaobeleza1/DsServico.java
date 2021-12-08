@@ -18,12 +18,14 @@ public class DsServico extends AppCompatActivity {
     RecyclerView recyclerViewAtiv;
     LinearLayout addAtiv;
     Button btnCancel, btnConfirm;
+    DaoMercurio daoMercurio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ds_servico);
 
+        daoMercurio = new DaoMercurio(this);
         recyclerViewAtiv = findViewById(R.id.listAtv);
         addAtiv = findViewById(R.id.ll_addAtiv);
         btnConfirm = findViewById(R.id.btn_confirmar);
@@ -31,11 +33,6 @@ public class DsServico extends AppCompatActivity {
 
         // carregar
         carregaAtivs();
-
-        AdaperAtiv adaperAtiv = new AdaperAtiv(arrayListAtiv);
-
-        recyclerViewAtiv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        recyclerViewAtiv.setAdapter(adaperAtiv);
 
         //evento de click
         addAtiv.setOnClickListener(new View.OnClickListener() {
@@ -62,12 +59,20 @@ public class DsServico extends AppCompatActivity {
         });
     }
 
-    private void carregaAtivs() {
-        DtoAtiv ativ = new DtoAtiv("Desenvolver o back do sistema com ASP.NET");
+    public void carregaAtivs() {
+       /*DtoAtiv ativ = new DtoAtiv("Desenvolver o back do sistema com ASP.NET");
         DtoAtiv ativ2 = new DtoAtiv("Desenvolver o front do sistema com ASP.NET");
 
         arrayListAtiv.add(ativ);
-        arrayListAtiv.add(ativ2);
+        arrayListAtiv.add(ativ2);*/
+
+
+        arrayListAtiv = daoMercurio.consultarAtiv();
+
+        AdaperAtiv adaperAtiv = new AdaperAtiv(arrayListAtiv);
+
+        recyclerViewAtiv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recyclerViewAtiv.setAdapter(adaperAtiv);
     }
 
     private void openDialog() {

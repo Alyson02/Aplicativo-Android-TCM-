@@ -1,6 +1,5 @@
 package com.example.appsalaobeleza1;
 
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +30,7 @@ public class AdapterCliente extends RecyclerView.Adapter<AdapterCliente.ClienteV
 
     @Override
     public void onBindViewHolder(@NonNull ClienteViewHolder holder, int position) {
-        holder.txtDesc.setText(arrayListCliente.get(position).getTitulo());
+        holder.txtTitulo.setText(arrayListCliente.get(position).getNome());
         holder.txtDesc.setText(arrayListCliente.get(position).getDesc());
         holder.imgView.setImageResource(arrayListCliente.get(position).getIdImage());
     }
