@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.appsalaobeleza1.controlador.LoginDto;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -55,7 +56,10 @@ public class Servico extends AppCompatActivity implements AdapterServ.OnNoteList
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.user:
-                        startActivity(new Intent(getApplicationContext(), UserActivity.class));
+                        LoginDto user = new LoginDto();
+                        Intent intent = new Intent(getApplicationContext(), UserActivity.class);
+
+                        startActivity(intent);
                         overridePendingTransition(0, 0);
                         return true;
                 }

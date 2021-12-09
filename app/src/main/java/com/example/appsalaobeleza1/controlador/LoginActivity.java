@@ -16,26 +16,33 @@ import com.example.appsalaobeleza1.Servico;
 import com.example.appsalaobeleza1.CadastraFunc;
 import com.example.appsalaobeleza1.EsqueciSenha;
 import com.example.appsalaobeleza1.R;
+import com.example.appsalaobeleza1.Session;
 import com.example.appsalaobeleza1.utils.Mensagem;
 
 public class LoginActivity extends AppCompatActivity {
 
     EditText username, password;
     Button btnLogin, btnCad;
-    LoginDto loginDto;
+    LoginDto user;
     DaoMercurio daoMercurio;
     TextView twEsqueci;
+    private Session session;//global variable
+    int id;
+    String nome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        daoMercurio = new DaoMercurio(this);
         username = findViewById(R.id.inputUser);
         password = findViewById(R.id.inputPassword);
         btnLogin = findViewById(R.id.btnEnviar);
         twEsqueci = findViewById(R.id.txtEsqueci);
         btnCad = findViewById(R.id.btnCad);
+        session = new Session(getApplicationContext());
+
 
 
 
@@ -43,6 +50,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                id = daoMercurio.pegarId(username.getText().toString());
+                nome = daoMercurio.pegaNome(username.getText().toString());
                 daoMercurio = new DaoMercurio(getApplicationContext());
 
                 try {
@@ -54,10 +63,16 @@ public class LoginActivity extends AppCompatActivity {
                         Mensagem.exibirMensagem(getApplicationContext(), "Campos vazios!");
                     } else {
                         if(verifica) {
+                            user = new LoginDto();
                             Log.i("Validação", "Usuario" + username + "\n Senha" + password);
                             Toast.makeText(getApplicationContext(), "Logado com sucesso", Toast.LENGTH_SHORT).show();
-                            Intent telaMenu = new Intent(getApplicationContext(), Servico.class);
-                            startActivity(telaMenu);
+
+                            session.setnome(nome);
+                            session.setuser(username.getText().toString());
+                            session.setpass(password.getText().toString());
+                            session.setid(id);
+                            Intent intent = new Intent(getApplicationContext(), Servico.class);
+                            startActivity(intent);
                         }else{
                             Toast.makeText(getApplicationContext(), "Email ou senha incorreto!", Toast.LENGTH_SHORT).show();
                         }

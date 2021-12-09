@@ -220,4 +220,26 @@ public class DaoMercurio extends SQLiteOpenHelper {
         String[] args = {dtoCliente.getId()+""};
         return getWritableDatabase().update(tabelaCli, values, id, args);
     }
+
+    public int pegarId(String user){
+        String comando = "SELECT id FROM " + tabelaFunc + " WHERE EMAIL = ?";
+        String[] args = {user};
+        Cursor cursor = getReadableDatabase().rawQuery(comando, args);
+        LoginDto idFunc = new LoginDto();
+        while (cursor.moveToNext()){
+            idFunc.setId(cursor.getInt(0));
+        }
+        return idFunc.getId();
+    }
+
+    public String pegaNome(String user){
+        String comando = "SELECT NOME FROM " + tabelaFunc + " WHERE EMAIL = ?";
+        String[] args = {user};
+        Cursor cursor = getReadableDatabase().rawQuery(comando, args);
+        LoginDto idFunc = new LoginDto();
+        while (cursor.moveToNext()){
+            idFunc.setNomeFunc(cursor.getString(0));
+        }
+        return idFunc.getNomeFunc();
+    }
 }

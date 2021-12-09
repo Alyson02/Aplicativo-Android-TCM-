@@ -6,10 +6,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class UserActivity extends AppCompatActivity {
+
+    TextView nome;
+    EditText email, senha;
+    Button btn;
+    int id;
+    private Session session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +27,16 @@ public class UserActivity extends AppCompatActivity {
 
         //variável de inicialização e atribuição
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navogatiom);
+        nome = findViewById(R.id.txtNome);
+        email = findViewById(R.id.inputEmailUser);
+        senha = findViewById(R.id.inputPassUser);
+        btn = findViewById(R.id.btnAlteraAcesso);
+        session = new Session(this);
+
+        email.setText(session.getuser());
+        senha.setText(session.getpass());
+        nome.setText(session.getnome());
+        id = session.getid();
 
         // Setar a home selecionada
         bottomNavigationView.setSelectedItemId(R.id.user);

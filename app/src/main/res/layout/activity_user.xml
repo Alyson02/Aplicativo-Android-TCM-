@@ -7,119 +7,104 @@
     tools:context=".UserActivity">
 
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="138dp"
-        android:layout_height="138dp"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/rimuru"
-        app:civ_border_color="#FF000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Rimuru"
-        android:textColor="@color/black"
-        android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Dev JR"
-
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="300dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/divuser"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6">
-
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="138dp"
+            android:layout_height="138dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/batman"
+            app:civ_border_color="#FF000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tituloAlteracao"
+            android:id="@+id/txtNome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Informações de acesso"
-            android:layout_marginLeft="40dp"
-            android:textColor="@color/black_overlay"
-            android:textStyle="bold"
-            android:textSize="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Rimuru"
+            android:textColor="@color/black"
+            android:textSize="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
-        <EditText
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="40dp"
-            android:layout_marginTop="20dp"
-            android:inputType="textEmailAddress"
-            tools:ignore="SpeakableTextPresentCheck"
-            android:hint="Email"/>
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="300dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/divuser"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNome">
 
-        <com.google.android.material.textfield.TextInputLayout
-            app:passwordToggleEnabled="true"
-            android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="40dp">
 
+            <TextView
+                android:id="@+id/tituloAlteracao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="12dp"
+                android:text="Informações de acesso"
+                android:textColor="@color/black_overlay"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
             <EditText
-                android:id="@+id/inputUser"
+                android:id="@+id/inputEmailUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPassword"
-                />
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="20dp"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="40dp"
-            android:layout_marginTop="20dp"
-            android:text="alterar acesso"
-            android:backgroundTint="#1B7FB8"
-            android:textColor="@color/white"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="10dp"
+                app:passwordToggleEnabled="true">
 
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+                <EditText
+                    android:id="@+id/inputPassUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/btnAlteraAcesso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#1B7FB8"
+                android:text="alterar acesso"
+                android:textColor="@color/white" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
