@@ -17,6 +17,14 @@ public class DtoCliente {
         this.telefone = telefone;
     }
 
+    public DtoCliente(String nome, String desc, String email, String telefone, int id) {
+        this.nome = nome;
+        this.desc = desc;
+        this.email = email;
+        this.telefone = telefone;
+        this.id = id;
+    }
+
     public DtoCliente() {
     }
 

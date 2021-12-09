@@ -1,6 +1,8 @@
 package com.example.appsalaobeleza1;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,15 +71,34 @@ public class AdapterCliente extends RecyclerView.Adapter<AdapterCliente.ClienteV
                     int pos = getAdapterPosition();
                     dtoCliente = new DtoCliente();
                     dtoCliente = arrayListCliente.get(pos);
-                    int del = daoMercurio.excluir(dtoCliente);
-                    if(del > 0) {
-                        arrayListCliente.remove(getAdapterPosition());
-                        notifyItemRemoved(getAdapterPosition());
-                        return true;
-                    }else{
-                        Toast.makeText(view.getContext(), "Deletado com sucesso", Toast.LENGTH_SHORT).show();
-                        return false;
-                    }
+
+                    AlertDialog.Builder msg = new AlertDialog.Builder(view.getContext());
+                    msg.setMessage("Deseja excluir?");
+                    msg.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            try {
+
+                                int del = daoMercurio.excluir(dtoCliente);
+                                if (del > 0) {
+                                    arrayListCliente.remove(getAdapterPosition());
+                                    notifyItemRemoved(getAdapterPosition());
+                                    //return true;
+                                } else {
+                                    Toast.makeText(view.getContext(), "Erro ao excluir", Toast.LENGTH_SHORT).show();
+                                    //return false;
+                                }
+                            }catch (Exception e){
+                                Toast.makeText(view.getContext(), "Erro no banco de dados", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+
+                    msg.setNegativeButton("Não", null);
+                    msg.show();
+
+                    return true;
+
                 }
             });
 

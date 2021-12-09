@@ -24,6 +24,7 @@ public class Clientes extends AppCompatActivity implements AdapterCliente.OnNote
     RecyclerView recyclerViewCliente;
     CardView cardAddCli;
     DaoMercurio daoMercurio;
+    DtoCliente dtoCliente;
     EditText edPesquisa;
 
     @Override
@@ -114,9 +115,17 @@ public class Clientes extends AppCompatActivity implements AdapterCliente.OnNote
 
     @Override
     public void onNoteClick(int position) {
+        daoMercurio = new DaoMercurio(getApplicationContext());
+        dtoCliente = new DtoCliente();
+        dtoCliente = arrayListCliente.get(position);
         Intent intent = new Intent(this, UpdateCliActivity.class);
         //Como passar esse item selecionado:
         //intent.putExtra("some_object", arrayListServ.get(position)  obs: pesquisar: Como anexar objetos parcel a pacotes );
+        intent.putExtra("nome", dtoCliente.getNome());
+        intent.putExtra("desc", dtoCliente.getDesc());
+        intent.putExtra("email", dtoCliente.getEmail());
+        intent.putExtra("tel", dtoCliente.getTelefone());
+        intent.putExtra("id", dtoCliente.getId());
         startActivity(intent);
     }
 }

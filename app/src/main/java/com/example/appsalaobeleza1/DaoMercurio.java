@@ -209,4 +209,15 @@ public class DaoMercurio extends SQLiteOpenHelper {
         }
     }
 
+    public long alterarCli(DtoCliente dtoCliente) {
+        //Classe para associar os valores digitados do usuario a coluna
+        ContentValues values = new ContentValues();
+        values.put("NOME", dtoCliente.getNome());
+        values.put("DESCRICAO", dtoCliente.getDesc());
+        values.put("EMAIL", dtoCliente.getEmail());
+        values.put("TELEFONE", dtoCliente.getTelefone());
+        String id = "id=?";
+        String[] args = {dtoCliente.getId()+""};
+        return getWritableDatabase().update(tabelaCli, values, id, args);
+    }
 }
