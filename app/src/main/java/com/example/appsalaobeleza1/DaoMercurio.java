@@ -242,4 +242,14 @@ public class DaoMercurio extends SQLiteOpenHelper {
         }
         return idFunc.getNomeFunc();
     }
+
+    public long alterarFunc(LoginDto user) {
+        //Classe para associar os valores digitados do usuario a coluna
+        ContentValues values = new ContentValues();
+        values.put("EMAIL", user.getUsuarioEmail());
+        values.put("SENHA", user.getSenha());
+        String id = "id=?";
+        String[] args = {user.getId()+""};
+        return getWritableDatabase().update(tabelaFunc, values, id, args);
+    }
 }

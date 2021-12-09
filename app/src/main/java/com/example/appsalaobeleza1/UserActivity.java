@@ -6,10 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.appsalaobeleza1.controlador.LoginDto;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class UserActivity extends AppCompatActivity {
@@ -61,5 +64,31 @@ public class UserActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoginDto user = new LoginDto(
+                        senha.getText().toString(),
+                        email.getText().toString(),
+                        id);
+                DaoMercurio daoMercurio = new DaoMercurio(getApplicationContext());
+                try {
+                    long linhasInseridas = daoMercurio.alterarFunc(user);
+                    if(linhasInseridas>0){
+                        Toast.makeText(getApplicationContext(), "Alterado com sucesso", Toast.LENGTH_SHORT).show();
+                        session.setuser(email.getText().toString());
+                        session.setpass(senha.getText().toString());
+                        Intent intent = new Intent(getApplicationContext(), UserActivity.class);
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(getApplicationContext(), "Não foi possível alterar", Toast.LENGTH_SHORT).show();
+                    }
+                }catch (Exception exception){
+                    Toast.makeText(getApplicationContext(), "Erro ao alterar: " + exception.toString(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
     }
 }

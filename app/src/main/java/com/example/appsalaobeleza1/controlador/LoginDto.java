@@ -15,6 +15,12 @@ public class LoginDto {
         this.usuarioEmail = usuarioEmail;
     }
 
+    public LoginDto(String senha, String usuarioEmail, int id) {
+        this.senha = senha;
+        this.usuarioEmail = usuarioEmail;
+        this.id = id;
+    }
+
     public LoginDto(String senha, String usuarioEmail, String nome, String cpf) {
         this.senha = senha;
         this.usuarioEmail = usuarioEmail;

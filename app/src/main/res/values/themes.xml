@@ -1,13 +1,13 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Theme.AppSalaoBeleza1" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.AppMercuryo" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/bar_color</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="FullscreenTheme" parent="Theme.AppSalaoBeleza1">
+    <style name="FullscreenTheme" parent="Theme.AppMercuryo">
         <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
         <item name="android:windowActionBarOverlay">false</item>
         <item name="android:windowBackground">@null</item>
