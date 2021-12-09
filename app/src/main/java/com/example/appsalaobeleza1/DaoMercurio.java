@@ -143,4 +143,31 @@ public class DaoMercurio extends SQLiteOpenHelper {
 
         return listAtiv;
     }
+
+    public ArrayList<DtoCliente> consultarCliPorNome(String nome){
+        String comando = "SELECT * FROM " + tabelaCli + " WHERE NOME LIKE ?" + " ORDER BY NOME";
+        String[] args = {"%"+nome+"%"};
+        Cursor cursor = getReadableDatabase().rawQuery(comando, args);
+        ArrayList<DtoCliente> listAtiv = new ArrayList<>();
+
+        while(cursor.moveToNext()){
+            DtoCliente dtoCliente = new DtoCliente();
+            dtoCliente.setId(cursor.getInt(0));
+            dtoCliente.setNome(cursor.getString(1));
+            dtoCliente.setDesc(cursor.getString(2));
+            dtoCliente.setEmail(cursor.getString(3));
+            dtoCliente.setTelefone(cursor.getString(4));
+            dtoCliente.setIdImage(R.drawable.tony);
+
+            listAtiv.add(dtoCliente);
+        }
+
+        return listAtiv;
+    }
+
+    public int excluir(DtoCliente dtoCliente) {
+        String id = "id=?";
+        String[] args = {dtoCliente.getId()+""};
+        return getWritableDatabase().delete(tabelaCli, id, args);
+    }
 }

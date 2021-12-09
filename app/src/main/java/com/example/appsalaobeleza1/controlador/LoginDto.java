@@ -1,12 +1,8 @@
 package com.example.appsalaobeleza1.controlador;
 
-import android.content.Context;
-
-import com.example.appsalaobeleza1.utils.Mensagem;
-
 public class LoginDto {
     //atributos
-    private String senha, usuarioEmail;
+    private String senha, usuarioEmail, nomeFunc, cpf;
 
     //Construtores
 
@@ -16,6 +12,13 @@ public class LoginDto {
     public LoginDto(String senha, String usuarioEmail) {
         this.senha = senha;
         this.usuarioEmail = usuarioEmail;
+    }
+
+    public LoginDto(String senha, String usuarioEmail, String nome, String cpf) {
+        this.senha = senha;
+        this.usuarioEmail = usuarioEmail;
+        this.nomeFunc = nome;
+        this.cpf = cpf;
     }
 
     //Geters and Seters
@@ -36,12 +39,19 @@ public class LoginDto {
         this.usuarioEmail = usuarioEmail;
     }
 
-    //Método de autenticação
+    public String getNomeFunc() {
+        return nomeFunc;
+    }
 
-    public boolean autenticar(String usuario, String senha) {
-        if (getUsuarioEmail().equals(usuario) && getSenha().equals(senha)) {
-            return true;
-        }
-        return false;
+    public void setNomeFunc(String nomeFunc) {
+        this.nomeFunc = nomeFunc;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 }

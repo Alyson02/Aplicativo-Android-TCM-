@@ -28,7 +28,8 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="82dp"
-                android:src="@drawable/ic_baseline_account_circle_24" />
+                android:scaleType="centerCrop"
+                android:src="@drawable/tony" />
 
             <TextView
                 android:layout_width="match_parent"

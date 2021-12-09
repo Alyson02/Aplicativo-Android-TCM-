@@ -8,8 +8,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -21,6 +24,7 @@ public class Clientes extends AppCompatActivity implements AdapterCliente.OnNote
     RecyclerView recyclerViewCliente;
     CardView cardAddCli;
     DaoMercurio daoMercurio;
+    EditText edPesquisa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,7 @@ public class Clientes extends AppCompatActivity implements AdapterCliente.OnNote
         recyclerViewCliente = findViewById(R.id.recyclerViewCliente);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navogatiom);
         cardAddCli = findViewById(R.id.cardAddCli);
+        edPesquisa = findViewById(R.id.edPesquisa);
 
 
         // Setar a home selecionada
@@ -66,7 +71,31 @@ public class Clientes extends AppCompatActivity implements AdapterCliente.OnNote
         });
 
         carregaClientes();
+
+        edPesquisa.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+                arrayListCliente = daoMercurio.consultarCliPorNome(editable.toString());
+                AdapterCliente adapter = new AdapterCliente(arrayListCliente,Clientes.this );
+                recyclerViewCliente.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                recyclerViewCliente.setAdapter(adapter);
+
+            }
+        });
     }
+
+
 
     private void carregaClientes() {
         /*DtoCliente cliente = new DtoCliente("Tony Stark", "Genio playboy milionáro e filantropo", R.drawable.tony);
