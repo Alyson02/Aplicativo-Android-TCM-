@@ -9,7 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.appsalaobeleza1.DaoMercurio;
 import com.example.appsalaobeleza1.Servico;
 import com.example.appsalaobeleza1.CadastraFunc;
 import com.example.appsalaobeleza1.EsqueciSenha;
@@ -21,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText username, password;
     Button btnLogin, btnCad;
     LoginDto loginDto;
+    DaoMercurio daoMercurio;
     TextView twEsqueci;
 
     @Override
@@ -34,26 +37,33 @@ public class LoginActivity extends AppCompatActivity {
         twEsqueci = findViewById(R.id.txtEsqueci);
         btnCad = findViewById(R.id.btnCad);
 
-        loginDto = new LoginDto("123","gmail");
-
 
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if((username.getText().toString().equals(null) || password.getText().toString().equals(null)) ||
-                        (username.getText().toString().equals("") || password.getText().toString().equals(""))) {
-                    Mensagem.exibirMensagem(getApplicationContext(), "Campos vazios!");
-                }else {
 
-                    if (loginDto.autenticar(password.getText().toString(), username.getText().toString())) {
-                        Log.i("Validação", "Usuario" + username + "\n Senha" + password);
-                        Intent telaMenu = new Intent(getApplicationContext(), Servico.class);
-                        startActivity(telaMenu);
-                        Mensagem.exibirMensagem(getApplicationContext(), "Logado com sucesso!!");
+                daoMercurio = new DaoMercurio(getApplicationContext());
+
+                try {
+                    boolean verifica = daoMercurio.verificaLogin(username.getText().toString(),
+                                                                 password.getText().toString());
+
+                    if ((username.getText().toString().equals(null) || password.getText().toString().equals(null)) ||
+                            (username.getText().toString().equals("") || password.getText().toString().equals(""))) {
+                        Mensagem.exibirMensagem(getApplicationContext(), "Campos vazios!");
                     } else {
-                        Mensagem.exibirMensagem(getApplicationContext(), "Usuario/Senha inválidos!!");
+                        if(verifica) {
+                            Log.i("Validação", "Usuario" + username + "\n Senha" + password);
+                            Toast.makeText(getApplicationContext(), "Logado com sucesso", Toast.LENGTH_SHORT).show();
+                            Intent telaMenu = new Intent(getApplicationContext(), Servico.class);
+                            startActivity(telaMenu);
+                        }else{
+                            Toast.makeText(getApplicationContext(), "Email ou senha incorreto!", Toast.LENGTH_SHORT).show();
+                        }
                     }
+                }catch (Exception e){
+                    Toast.makeText(getApplicationContext(), "Erro no banco de dados: " + e.toString(), Toast.LENGTH_SHORT).show();
                 }
             }
         });

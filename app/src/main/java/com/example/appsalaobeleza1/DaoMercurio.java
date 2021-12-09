@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.appsalaobeleza1.controlador.LoginDto;
+
 import java.util.ArrayList;
 
 public class DaoMercurio extends SQLiteOpenHelper {
@@ -15,9 +17,10 @@ public class DaoMercurio extends SQLiteOpenHelper {
     private final String tabelaServ = "SERVICO";
     private final String tabelaAtiv = "ATIVIDADE";
     private final String tabelaCli = "CLIENTE";
+    private final String tabelaFunc = "FUNCIONARIO";
 
     public DaoMercurio(@Nullable Context context) {
-        super(context, "DB_MERCURIO", null, 4);
+        super(context, "DB_MERCURIO", null, 6);
     }
 
     @Override
@@ -40,9 +43,17 @@ public class DaoMercurio extends SQLiteOpenHelper {
                 "EMAIL VARCHAR(200)," +
                 "TELEFONE VARCHAR(15))";
 
+        String cmdFunc = "CREATE TABLE " + tabelaFunc + "(" +
+                "ID INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "NOME VARCHAR(100)," +
+                "EMAIL VARCHAR(200)," +
+                "SENHA VARCHAR(100)," +
+                "CPF VARCHAR(20))";
+
         sqLiteDatabase.execSQL(cmdServ);
         sqLiteDatabase.execSQL(cmdAtiv);
         sqLiteDatabase.execSQL(cmdCli);
+        sqLiteDatabase.execSQL(cmdFunc);
 
 
     }
@@ -53,6 +64,7 @@ public class DaoMercurio extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+tabelaServ);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+tabelaAtiv);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+tabelaCli);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+tabelaFunc);
         onCreate(sqLiteDatabase);
     }
 
@@ -170,4 +182,31 @@ public class DaoMercurio extends SQLiteOpenHelper {
         String[] args = {dtoCliente.getId()+""};
         return getWritableDatabase().delete(tabelaCli, id, args);
     }
+
+
+    public long inserirFunc(LoginDto loginDto){
+        //Classe para associar os valores digitados do usuario a coluna
+        ContentValues values = new ContentValues();
+        values.put("NOME", loginDto.getNomeFunc());
+        values.put("EMAIL", loginDto.getUsuarioEmail());
+        values.put("SENHA", loginDto.getSenha());
+        values.put("CPF", loginDto.getCpf());
+
+        long nLinha = getWritableDatabase().insert(tabelaFunc, null, values);
+
+        return nLinha;
+    }
+
+    public boolean verificaLogin(String email, String senha){
+        String comando = "SELECT * FROM " + tabelaFunc + " WHERE EMAIL = ? AND SENHA = ?";
+        String[] args = {email, senha};
+        Cursor cursor = getReadableDatabase().rawQuery(comando, args);
+        int cursorCount = cursor.getCount();
+        if (cursorCount > 0) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
 }

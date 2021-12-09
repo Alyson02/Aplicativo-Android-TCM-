@@ -48,7 +48,7 @@
             android:layout_marginRight="28dp">
 
         <EditText
-            android:id="@+id/inputPassword"
+            android:id="@+id/inputUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -70,7 +70,7 @@
 
 
         <EditText
-            android:id="@+id/inputUser"
+            android:id="@+id/inputPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"

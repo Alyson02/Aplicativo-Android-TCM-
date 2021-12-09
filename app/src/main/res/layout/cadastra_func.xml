@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controlador.LoginActivity">
+    tools:context=".CadastraFunc">
 
     <ImageView
         android:id="@+id/imageView8"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:layout_marginTop="130dp">
+        android:layout_marginTop="150dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -39,7 +39,7 @@
             android:textAlignment="center"/>
 
         <EditText
-            android:id="@+id/inputNome"
+            android:id="@+id/inputNomeFunc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -55,7 +55,7 @@
             android:minHeight="15dp"/>
 
         <EditText
-            android:id="@+id/inputCpf"
+            android:id="@+id/inputCpfFunc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -72,7 +72,7 @@
             android:minHeight="15dp"/>
 
         <EditText
-            android:id="@+id/inputEmail"
+            android:id="@+id/inputEmailFunc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -89,7 +89,7 @@
             android:minHeight="15dp"/>
 
         <EditText
-            android:id="@+id/inputPassword"
+            android:id="@+id/inputPasswordFunc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -112,9 +112,9 @@
             android:layout_width="236.5dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:layout_marginTop="75dp"
+
             android:background="@drawable/buttons_app"
-            android:text="solicitar"
+            android:text="Cadastrar"
             android:textColor="#FFFFFF" />
 
         <TextView

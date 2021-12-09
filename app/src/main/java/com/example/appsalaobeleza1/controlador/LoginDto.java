@@ -3,6 +3,7 @@ package com.example.appsalaobeleza1.controlador;
 public class LoginDto {
     //atributos
     private String senha, usuarioEmail, nomeFunc, cpf;
+    private int id;
 
     //Construtores
 
@@ -53,5 +54,13 @@ public class LoginDto {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
