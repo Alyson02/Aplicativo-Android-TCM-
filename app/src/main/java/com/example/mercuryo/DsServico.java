@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -19,6 +20,7 @@ public class DsServico extends AppCompatActivity {
     LinearLayout addAtiv;
     Button btnCancel, btnConfirm;
     DaoMercurio daoMercurio;
+    TextView titulo, desc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,12 @@ public class DsServico extends AppCompatActivity {
         addAtiv = findViewById(R.id.ll_addAtiv);
         btnConfirm = findViewById(R.id.btn_confirmar);
         btnCancel = findViewById(R.id.btn_cancelar);
+        titulo = findViewById(R.id.tvTitulo);
+        desc = findViewById(R.id.tvDesc);
+
+        Bundle bundle = getIntent().getExtras();
+        titulo.setText(bundle.getString("titulo"));
+        desc.setText(bundle.getString("desc"));
 
         // carregar
         carregaAtivs();

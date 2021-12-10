@@ -27,6 +27,7 @@ public class Servico extends AppCompatActivity implements AdapterServ.OnNoteList
     RecyclerView recyclerViewAtiv;
     CardView cardAdd;
     DaoMercurio daoMercurio;
+    DtoServ dtoServ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,10 +146,16 @@ public class Servico extends AppCompatActivity implements AdapterServ.OnNoteList
     @Override
     public void onNoteClick(int position) {
         Log.d(TAG, "onNoteClick: clicked.");
+        daoMercurio = new DaoMercurio(getApplicationContext());
+        dtoServ = new DtoServ();
+        dtoServ = arrayListServ.get(position);
 
         Intent intent = new Intent(this, DsServico.class);
         //Como passar esse item selecionado:
         //intent.putExtra("some_object", arrayListServ.get(position)  obs: pesquisar: Como anexar objetos parcel a pacotes );
+        intent.putExtra("titulo", dtoServ.getTitulo());
+        intent.putExtra("desc", dtoServ.getDesc());
+
         startActivity(intent);
     }
 }
