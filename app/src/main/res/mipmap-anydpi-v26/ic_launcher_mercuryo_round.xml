@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
     <background android:drawable="@color/ic_launcher_mercuryo_background"/>
-    <foreground android:drawable="@mipmap/IconeMercuryo"/>
+    <foreground android:drawable="@mipmap/ic_launcher_mercuryo_foreground"/>
 </adaptive-icon>

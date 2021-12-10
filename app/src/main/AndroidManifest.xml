@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.appsalaobeleza1">
+    package="com.example.mercuryo">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
@@ -18,47 +18,38 @@
             android:value="@string/map_key"/>
 
         <activity
-            android:name=".UpdateCliActivity"
+            android:name="com.example.mercuryo.UpdateCliActivity"
             android:exported="false" />
         <activity
-            android:name=".Servico"
+            android:name="com.example.mercuryo.Servico"
             android:exported="false" />
         <activity
-            android:name=".InsCliente"
+            android:name="com.example.mercuryo.InsCliente"
             android:exported="false" />
         <activity
-            android:name=".Clientes"
+            android:name="com.example.mercuryo.Clientes"
             android:exported="true"></activity>
         <activity
-            android:name=".Info"
+            android:name="com.example.mercuryo.Info"
             android:exported="true"></activity>
         <activity
-            android:name=".UserActivity"
+            android:name="com.example.mercuryo.UserActivity"
             android:exported="false" />
         <activity
-            android:name=".DsServico"
+            android:name="com.example.mercuryo.DsServico"
             android:exported="false" />
         <activity
-            android:name=".controlador.ConsultarActivity"
-            android:label="Tela de Consulta" />
-        <activity
-            android:name=".controlador.CadastrarActivity"
-            android:label="Tela de Cadastro" />
-        <activity
-            android:name=".controlador.MenuActivity"
-            android:label="Tela de Menu" />
-        <activity
-            android:name=".controlador.LoginActivity"
+            android:name="com.example.mercuryo.controlador.LoginActivity"
             android:label="Tela de Login" />
-        <activity android:name=".controlador.SplashActivity">
+        <activity android:name="com.example.mercuryo.controlador.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CadastraFunc" />
-        <activity android:name=".EsqueciSenha" />
+        <activity android:name="com.example.mercuryo.CadastraFunc" />
+        <activity android:name="com.example.mercuryo.EsqueciSenha" />
     </application>
 
 </manifest>

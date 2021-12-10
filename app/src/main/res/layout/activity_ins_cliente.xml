@@ -8,9 +8,9 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:translationY="-6dp"
-        android:layout_width="396dp"
+        android:layout_width="match_parent"
         android:layout_height="178dp"
+        android:translationY="-6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
