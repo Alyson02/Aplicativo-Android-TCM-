@@ -15,6 +15,7 @@ public class AdapterServ extends  RecyclerView.Adapter<AdapterServ.ServViewHolde
     ArrayList<DtoServ> arrayListServ;
     private OnNoteListener onNoteListener;
 
+
     public AdapterServ(ArrayList<DtoServ> arrayListServ, OnNoteListener onNoteListener) {
         this.arrayListServ = arrayListServ;
         this.onNoteListener = onNoteListener;

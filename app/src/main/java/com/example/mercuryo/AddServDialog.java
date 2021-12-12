@@ -20,6 +20,7 @@ public class AddServDialog extends DialogFragment {
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        Session session = new Session(getActivity().getApplicationContext());
 
         LayoutInflater inflater = getActivity().getLayoutInflater();
 

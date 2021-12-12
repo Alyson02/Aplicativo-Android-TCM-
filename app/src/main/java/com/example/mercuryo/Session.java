@@ -47,4 +47,22 @@ public class Session {
         String nome = prefs.getString("nome","");
         return nome;
     }
+
+    public void setnomeproj(String nome) {
+        prefs.edit().putString("nomeProj", nome).commit();
+    }
+
+    public String getnomeproj() {
+        String nome = prefs.getString("nomeProj","");
+        return nome;
+    }
+
+    public void setdescproj(String nome) {
+        prefs.edit().putString("desc", nome).commit();
+    }
+
+    public String getdescproj() {
+        String nome = prefs.getString("desc","");
+        return nome;
+    }
 }

@@ -21,6 +21,7 @@ public class DsServico extends AppCompatActivity {
     Button btnCancel, btnConfirm;
     DaoMercurio daoMercurio;
     TextView titulo, desc;
+    Session session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +35,11 @@ public class DsServico extends AppCompatActivity {
         btnCancel = findViewById(R.id.btn_cancelar);
         titulo = findViewById(R.id.tvTitulo);
         desc = findViewById(R.id.tvDesc);
+        session = new Session(getApplicationContext());
 
         Bundle bundle = getIntent().getExtras();
-        titulo.setText(bundle.getString("titulo"));
-        desc.setText(bundle.getString("desc"));
+        titulo.setText(session.getnomeproj());
+        desc.setText(session.getdescproj());
 
         // carregar
         carregaAtivs();

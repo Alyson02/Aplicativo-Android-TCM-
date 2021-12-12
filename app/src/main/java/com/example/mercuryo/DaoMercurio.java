@@ -148,7 +148,7 @@ public class DaoMercurio extends SQLiteOpenHelper {
             dtoCliente.setDesc(cursor.getString(2));
             dtoCliente.setEmail(cursor.getString(3));
             dtoCliente.setTelefone(cursor.getString(4));
-            dtoCliente.setIdImage(R.drawable.tony);
+            dtoCliente.setIdImage(R.drawable.jinx_arcane);
 
             listAtiv.add(dtoCliente);
         }
@@ -169,7 +169,7 @@ public class DaoMercurio extends SQLiteOpenHelper {
             dtoCliente.setDesc(cursor.getString(2));
             dtoCliente.setEmail(cursor.getString(3));
             dtoCliente.setTelefone(cursor.getString(4));
-            dtoCliente.setIdImage(R.drawable.tony);
+            dtoCliente.setIdImage(R.drawable.jinx_arcane);
 
             listAtiv.add(dtoCliente);
         }

@@ -28,6 +28,7 @@ public class Servico extends AppCompatActivity implements AdapterServ.OnNoteList
     CardView cardAdd;
     DaoMercurio daoMercurio;
     DtoServ dtoServ;
+    Session session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -149,12 +150,15 @@ public class Servico extends AppCompatActivity implements AdapterServ.OnNoteList
         daoMercurio = new DaoMercurio(getApplicationContext());
         dtoServ = new DtoServ();
         dtoServ = arrayListServ.get(position);
+        session = new Session(getApplicationContext());
 
         Intent intent = new Intent(this, DsServico.class);
         //Como passar esse item selecionado:
         //intent.putExtra("some_object", arrayListServ.get(position)  obs: pesquisar: Como anexar objetos parcel a pacotes );
-        intent.putExtra("titulo", dtoServ.getTitulo());
-        intent.putExtra("desc", dtoServ.getDesc());
+//        intent.putExtra("titulo", dtoServ.getTitulo());
+//        intent.putExtra("desc", dtoServ.getDesc());
+        session.setnomeproj(dtoServ.getTitulo());
+        session.setdescproj(dtoServ.getDesc());
 
         startActivity(intent);
     }
